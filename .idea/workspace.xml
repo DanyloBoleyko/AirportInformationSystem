@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f456e29b-e553-47b7-9a00-51e57501b3b3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/api/aircrafts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/api/brigades.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/api/departments.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/api/employees.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/api/flights.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/api/passengers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/api/professions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/lib/generators/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/lib/generators/generate_procedures.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/lib/generators/generate_tables.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/lib/generators/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/lib/types.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/lib/writing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/procedures/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/procedures/get_salary.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/procedures/get_total_employee_count.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/procedures/task1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/procedures/task10.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/procedures/task11.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/procedures/task12.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/procedures/task13.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/procedures/task2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/procedures/task3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/procedures/task4.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/procedures/task5.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/procedures/task6.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/procedures/task7.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/procedures/task8.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/procedures/task9.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/tables/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/tables/aircraft.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/tables/aircraft_brigade.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/tables/aircraft_type.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/tables/airport.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/tables/airport_aircraft.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/tables/brigade.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/tables/department.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/tables/department_manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/tables/diagnostic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/tables/employee.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/tables/employee_brigade.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/tables/flight.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/tables/flight_route.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/tables/inspection.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/tables/luggage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/tables/passenger.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/tables/profession.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/tables/schedule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/tables/schedule_route.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/models/tables/ticket.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/sql_server_client/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/sql_server_client/client.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/sql_server_client/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/jsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/assets/aircrafts/Airbus A330.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/assets/aircrafts/Boeing 737.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/assets/airport.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/assets/sky1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/assets/sky2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/components/AircraftTypeCard.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/components/AppHeader.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/components/AppTable.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/layouts/EmptyLayout.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/layouts/MainLayout.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/lib/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/lib/reactive.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/lib/writing.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/pages/Aircraft.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/pages/Aircrafts.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/pages/Brigades.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/pages/Departments.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/pages/Employees.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/pages/Home.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/pages/NotFound.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/pages/Stuff.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/routes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/store/aircrafts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/store/brigades.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/store/departments.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/store/employees.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/store/professions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/vuetify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/AirportInformationSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AirportInformationSystem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/back/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/back/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/assets/vue.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/vite.config.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="JavaScript File" />
+        <option value="Vue Composition API Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2UiN6Ajb2n7O4nYQ08dvTBX8HX2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;16.16.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;16.18.46&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/User/Projects/AirportInformationSystem/back/api&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PyCharm 2022.1.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlserver.localdb&quot;,
+      &quot;sqlserver&quot;
+    ],
+    &quot;vue.recent.templates&quot;: [
+      &quot;Vue Composition API Component&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\User\Projects\AirportInformationSystem\back\api" />
+      <recent name="D:\User\Projects\AirportInformationSystem\front\src\store" />
+      <recent name="D:\User\Projects\AirportInformationSystem\front\src\pages" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\User\Projects\AirportInformationSystem\back\sql_server_client" />
+      <recent name="D:\User\Projects\AirportInformationSystem\front\src\lib" />
+      <recent name="D:\User\Projects\AirportInformationSystem\front\src" />
+      <recent name="D:\User\Projects\AirportInformationSystem\front\src\store" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.front">
+    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="AirportInformationSystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/back" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/back/lib/generators/__init__.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="client (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AirportInformationSystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/back/sql_server_client" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/back/sql_server_client/client.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="client" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AirportInformationSystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/back" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:\User\Projects\AirportInformationSystem\back\sql_server_client\client.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="generate_procedures" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="AirportInformationSystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/back" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/back/lib/generators/generate_procedures.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="generate_tables" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AirportInformationSystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/back" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/back/lib/generators/generate_tables.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AirportInformationSystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/back" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/back/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="true" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="types" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AirportInformationSystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/back/lib" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:\User\Projects\AirportInformationSystem\back\lib\types.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="front" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/front/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.front" />
+      <item itemvalue="Python.__init__" />
+      <item itemvalue="Python.generate_procedures" />
+      <item itemvalue="Python.client" />
+      <item itemvalue="Python.client (1)" />
+      <item itemvalue="Python.generate_tables" />
+      <item itemvalue="Python.types" />
+      <item itemvalue="Python.main" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.generate_tables" />
+        <item itemvalue="Python.client (1)" />
+        <item itemvalue="Python.types" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f456e29b-e553-47b7-9a00-51e57501b3b3" name="Changes" comment="" />
+      <created>1693418263789</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1693418263789</updated>
+      <workItem from="1693418264800" duration="5458000" />
+      <workItem from="1693573824352" duration="1774000" />
+      <workItem from="1693575621273" duration="5970000" />
+      <workItem from="1693591790772" duration="14817000" />
+      <workItem from="1693752535494" duration="951000" />
+      <workItem from="1693820444350" duration="2882000" />
+      <workItem from="1693901501640" duration="1605000" />
+      <workItem from="1693987249986" duration="3807000" />
+      <workItem from="1693996977348" duration="2527000" />
+      <workItem from="1694011733070" duration="13015000" />
+      <workItem from="1694333676991" duration="26340000" />
+      <workItem from="1694450896226" duration="641000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/AirportInformationSystem$generate_procedures.coverage" NAME="generate_procedures Coverage Results" MODIFIED="1694340365089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/back" />
+    <SUITE FILE_PATH="coverage/AirportInformationSystem$main.coverage" NAME="main Coverage Results" MODIFIED="1694451217646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/back" />
+    <SUITE FILE_PATH="coverage/AirportInformationSystem$client__1_.coverage" NAME="client (1) Coverage Results" MODIFIED="1694339604452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/back/sql_server_client" />
+    <SUITE FILE_PATH="coverage/AirportInformationSystem$generators.coverage" NAME="generators Coverage Results" MODIFIED="1694027430293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/back" />
+    <SUITE FILE_PATH="coverage/AirportInformationSystem$utils.coverage" NAME="utils Coverage Results" MODIFIED="1694334756511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/back/lib" />
+    <SUITE FILE_PATH="coverage/AirportInformationSystem$sql_server_client.coverage" NAME="client Coverage Results" MODIFIED="1694336704028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/back" />
+    <SUITE FILE_PATH="coverage/AirportInformationSystem$generate_tables.coverage" NAME="generate_tables Coverage Results" MODIFIED="1694339898029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/back" />
+    <SUITE FILE_PATH="coverage/AirportInformationSystem$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1694344608116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/back" />
+  </component>
+</project>
