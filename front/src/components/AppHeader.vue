@@ -18,6 +18,12 @@ const menu = [
 			name: "aircrafts",
 		},
 	},
+	{
+		title: "Flights",
+		route: {
+			name: "flights",
+		},
+	},
 ]
 </script>
 

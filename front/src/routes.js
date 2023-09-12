@@ -42,6 +42,17 @@ const routes = [
                 name: 'aircrafts',
                 component: () => import('./pages/Aircrafts.vue')
             },
+            {
+                path: '/flight/:id/',
+                name: 'flight',
+                component: () => import('./pages/Flight.vue'),
+                props: route => ({ id: parseInt(route.params.id) || undefined })
+            },
+            {
+                path: '/flights',
+                name: 'flights',
+                component: () => import('./pages/Flights.vue')
+            },
             { path: '/:pathMatch(.*)*', name: '404', component: () => import('./pages/NotFound.vue') }
         ]
     }

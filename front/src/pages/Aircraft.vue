@@ -1,6 +1,8 @@
 <script setup>
 import { computed, ref } from "vue";
 import { useStore } from "vuex";
+import AircraftDetailsCard from "@/pages/aircraft/AircraftDetailsCard.vue";
+import AircraftFlightsCard from "@/pages/aircraft/AircraftFlightsCard.vue";
 
 const props = defineProps({
 	id: {
@@ -18,6 +20,9 @@ const loadingAircraftTypes = computed(() => store.state.aircrafts.loadingTypes)
 const aircraftTypes = computed(() => store.state.aircrafts.types_list)
 const aircraftType = computed(() => aircraftTypes.value?.find(t => t.aircraft_type_id === aircraft.value?.aircraft_type_id))
 
+const loadingFlights = ref(false)
+const flights = ref([])
+
 const getAircraft = () => {
 	loading.value = true
 	store.dispatch('aircrafts/getAircraft', {
@@ -27,12 +32,24 @@ const getAircraft = () => {
 		.finally(() => loading.value = false)
 }
 
+const getFlights = () => {
+	loadingFlights.value = true
+	store.dispatch('flights/getFlights', {
+		aircraft_id: parseInt(props.id),
+		with_schedule: true,
+		with_route: true,
+	})
+		.then(({ data }) => flights.value = data)
+		.finally(() => loadingFlights.value = false)
+}
+
 const getAircraftTypes = () => {
 	store.dispatch('aircrafts/getAircraftTypes')
 }
 
 getAircraft()
 getAircraftTypes()
+getFlights()
 </script>
 
 <template>
@@ -53,53 +70,29 @@ getAircraftTypes()
 	</v-container>
 
 	<v-container v-else>
-		<v-row align="baseline">
-			<v-col cols="auto">
-				<h1>{{ aircraft.name }}</h1>
-			</v-col>
-			<v-col class="text-body-1">
-				<span>{{ aircraftType?.name }}</span>
-			</v-col>
-		</v-row>
 		<v-row>
-			<v-col md="7" lg="5">
-				<v-card :flat="true" border>
-					<v-card-title>
-						<h2 class="text-h6">Details</h2>
-					</v-card-title>
-					<v-card-text>
-						<v-row>
-							<v-col>
-								<v-list>
-									<v-list-item>
-										<v-list-item-title>Type</v-list-item-title>
-										<v-list-item-subtitle>{{ aircraftType.type }}</v-list-item-subtitle>
-									</v-list-item>
-									<v-list-item>
-										<v-list-item-title>Seats</v-list-item-title>
-										<v-list-item-subtitle>{{ aircraftType.place_count }}</v-list-item-subtitle>
-									</v-list-item>
-									<v-list-item>
-										<v-list-item-title>Built at</v-list-item-title>
-										<v-list-item-subtitle>{{ aircraft.built_date }}</v-list-item-subtitle>
-									</v-list-item>
-								</v-list>
-							</v-col>
-							<v-col>
-								<v-list>
-									<v-list-item>
-										<v-list-item-title>Flights</v-list-item-title>
-										<v-list-item-subtitle>{{ aircraft.flight_count }}</v-list-item-subtitle>
-									</v-list-item>
-									<v-list-item>
-										<v-list-item-title>Repair count</v-list-item-title>
-										<v-list-item-subtitle>{{ aircraft.repair_count }}</v-list-item-subtitle>
-									</v-list-item>
-								</v-list>
-							</v-col>
-						</v-row>
-					</v-card-text>
-				</v-card>
+			<v-col md="9" lg="7">
+				<v-row align="baseline" class="mb-2">
+					<v-col cols="auto">
+						<h1>{{ aircraft.name }}</h1>
+					</v-col>
+					<v-col class="text-body-1">
+						<span>{{ aircraftType?.name }}</span>
+					</v-col>
+				</v-row>
+				<aircraft-details-card :aircraft="aircraft"
+									   :aircraft-type="aircraftType"
+									   :loading="loading || loadingAircraftTypes"
+				/>
+				<aircraft-flights-card :flights="flights" class="mt-4"
+									   :loading="loadingFlights"/>
+			</v-col>
+			<v-col v-if="$vuetify.display.mdAndUp" class="h-100">
+				<v-img src="/src/assets/sky2.jpg"
+					   height="calc(100vh - 64px - 32px)"
+					   class="rounded-lg"
+					   :cover="true"
+				/>
 			</v-col>
 		</v-row>
 	</v-container>

@@ -16,13 +16,18 @@ router = APIRouter(
 async def get_aircrafts(
         aircraft_id: Optional[int] = None,
         aircraft_type_id: Optional[int] = None,
+        with_types: Optional[bool] = False
 ):
     params = {}
+    join = {}
     if aircraft_id:
         params['aircraft_id'] = aircraft_id
     if aircraft_type_id:
         params['aircraft_type_id'] = aircraft_type_id
-    return db.select(TablesEnum.Aircraft, params)
+    if with_types:
+        join[TablesEnum.AircraftType] = 'aircraft_type_id'
+
+    return db.select(TablesEnum.Aircraft, params, join)
 
 
 @router.get("/type/list")

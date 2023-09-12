@@ -2,14 +2,16 @@ import api from "@/lib/api.js";
 
 const state = {
     list: [],
+    list_by_routes: [],
     loading: false,
+    loadingRoutes: false,
 }
 
 const actions = {
-    async getDepartments({ state }) {
+    async getFlights({ state }, params) {
         return new Promise((resolve, reject) => {
             state.loading = true
-            api.get('/departments/list')
+            api.get('/flights/list', { params })
                 .then((response) => {
                     resolve(response)
                     state.list = response.data
@@ -18,27 +20,33 @@ const actions = {
                 .finally(() => { state.loading = false })
         })
     },
-    async createDepartment({ state }, payload) {
+    async getFlight({ state }, params) {
         return new Promise((resolve, reject) => {
-            api.post('/departments/add', payload)
+            state.loading = true
+            api.get('/flights/list', { params })
                 .then((response) => {
                     resolve(response)
+                    state.list = response.data
                 })
                 .catch((error) => { reject(error) })
+                .finally(() => { state.loading = false })
         })
     },
-    async updateDepartment({ state }, payload) {
+    async getFlightByRoutes({ state }, params) {
         return new Promise((resolve, reject) => {
-            api.put('/departments/update', payload)
+            state.loadingRoutes = true
+            api.get('/flights/route/list', { params })
                 .then((response) => {
                     resolve(response)
+                    state.list_by_routes = response.data
                 })
                 .catch((error) => { reject(error) })
+                .finally(() => { state.loadingRoutes = false })
         })
     },
-    async deleteDepartment({ state }, payload) {
+    async getSchedule({ state }, params) {
         return new Promise((resolve, reject) => {
-            api.delete('/departments/delete', { data: payload })
+            api.get('/flights/schedule/list', { params })
                 .then((response) => {
                     resolve(response)
                 })
@@ -49,6 +57,5 @@ const actions = {
 
 export default {
     namespaced: true,
-    actions,
-    state
+    actions
 }

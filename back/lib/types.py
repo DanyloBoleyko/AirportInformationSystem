@@ -27,8 +27,8 @@ def python_value_to_sql_value(value, sql_type: Optional[str]) -> str:
     elif isinstance(value, int):
         return str(value)
     elif isinstance(value, str):
-        if sql_type == 'date':
-            return value
+        if sql_type == 'date' or sql_type == 'datetime' or sql_type == 'time':
+            return f"'{value}'"
         return f"N'{value}'"
     elif isinstance(value, bool):
         return '1' if value else '0'

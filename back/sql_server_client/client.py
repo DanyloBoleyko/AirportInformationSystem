@@ -4,7 +4,7 @@ import pyodbc
 from decimal import Decimal
 
 from back.lib.types import sql_type_to_python_type, python_value_to_sql_value
-from back.lib.writing import camel_case_to_python_case
+from back.lib.writing import camel_case_to_python_case, python_case_to_camel_case
 from back.sql_server_client.models import SQLTable, SQLColumn, SQLProcedure, SQLParameter, SQLServerTable, \
     SQLServerProcedure
 
@@ -19,9 +19,38 @@ class SQLServerClient:
             timeout=10
         )
 
-    def select(self, table: str, params: dict = None) -> List[dict]:
+    def select(self, table: str, params: dict = None, join: dict = None) -> List[dict]:
         cursor = self.connection.cursor()
-        query = f'SELECT * FROM {table}'
+        query_from = f'{table} {table.lower()}'
+        query_select = ['*']
+        table_names = set()
+        table_names.add(table.lower())
+
+        if join:
+            query_select = []
+
+            for join_table, join_key in join.items():
+                table_names.add(join_table.lower())
+                origin_table = table
+
+                if isinstance(join_key, str):
+                    join_key = python_case_to_camel_case(join_key, True)
+                elif isinstance(join_key, tuple):
+                    origin_table = join_key[0]
+                    join_key = python_case_to_camel_case(join_key[1], True)
+
+                query_from += f' JOIN {join_table} {join_table.lower()} ON {origin_table}.{join_key} = {join_table}.{join_key}'
+
+                cols = self.columns(join_table)
+                for col in cols:
+                    query_select.append(f'{join_table.lower()}.{col.name} as {join_table}{col.name}')
+
+            cols = self.columns(table)
+            for col in cols:
+                query_select.append(f'{table.lower()}.{col.name} as {col.name}')
+
+        query = f'SELECT {", ".join(query_select)} FROM {query_from}'
+
         items = {}
         if params:
             columns = self.columns(table)
@@ -43,8 +72,8 @@ class SQLServerClient:
         columns = list(filter(lambda x: not x.is_identity, self.columns(name)))
         values = [getattr(data, col.python_name()) for col in columns]
         cursor.execute(
-            f'INSERT INTO {name}({", ".join([n.name for n in columns])}) VALUES ({", ".join(["?" for _ in values])})',
-            [python_value_to_sql_value(v, c.sql_type) for v, c in zip(values, columns)]
+            f'INSERT INTO {name}({", ".join([n.name for n in columns])}) VALUES '
+            f'({", ".join([python_value_to_sql_value(v, c.sql_type) for v, c in zip(values, columns)])})',
         )
         cursor.commit()
         cursor.close()
@@ -52,20 +81,56 @@ class SQLServerClient:
     def insert_many(self, data: List[SQLServerTable]):
         cursor = self.connection.cursor()
         for table in data:
+            name = table.__class__.__name__
+            columns = list(filter(lambda x: not x.is_identity, self.columns(name)))
+            values = [getattr(table, col.python_name()) for col in columns]
             cursor.execute(
-                f'INSERT INTO {table.name}({[col.name for col in table.columns]}) VALUES ({["?" for col in table.columns]})',
-                [getattr(table, col.python_name()) for col in table.columns]
+                f'INSERT INTO {name}({", ".join([n.name for n in columns])}) VALUES '
+                f'({", ".join([python_value_to_sql_value(v, c.sql_type) for v, c in zip(values, columns)])})',
             )
         cursor.commit()
         cursor.close()
 
     def update(self, data: SQLServerTable):
         cursor = self.connection.cursor()
-        primary_key = next(filter(lambda x: x.is_identity, data.columns))
+        name = data.__class__.__name__
+        primary_key = next(filter(lambda x: x.is_identity, self.columns(name)))
+        columns = list(filter(lambda x: not x.is_identity, self.columns(name)))
+        values = [getattr(data, col.python_name()) for col in columns]
         cursor.execute(
-            f'UPDATE {data.name} SET {", ".join([col.name + " = ?" for col in data.columns])} WHERE {primary_key.name} = ?',
-            [getattr(data, col.python_name()) for col in data.columns] + [data.id]
+            f'UPDATE {name} SET {", ".join([n.name + " = ?" for n in columns])} '
+            f'WHERE {primary_key.name} = ?',
+            values + [getattr(data, primary_key.python_name())]
         )
+        cursor.commit()
+        cursor.close()
+
+    def delete(self, data: SQLServerTable):
+        cursor = self.connection.cursor()
+        name = data.__class__.__name__
+        primary_key = next(filter(lambda x: x.is_identity, self.columns(name)))
+        cursor.execute(
+            f'DELETE FROM {name} WHERE {primary_key.name} = ?',
+            [getattr(data, primary_key.python_name())]
+        )
+        cursor.commit()
+        cursor.close()
+
+    def delete_where(self, table: str, params: dict):
+        cursor = self.connection.cursor()
+        query = f'DELETE FROM {table}'
+
+        items = {}
+        columns = self.columns(table)
+        for col in columns:
+            col_name = col.python_name()
+            if col_name in params:
+                items[col.name] = params[col_name]
+
+        query += ' WHERE ' + ' AND '.join([f'{key} = ?' for key in items.keys()])
+
+        cursor.execute(query, list(items.values()))
+
         cursor.commit()
         cursor.close()
 

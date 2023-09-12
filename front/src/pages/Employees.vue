@@ -216,7 +216,7 @@ store.dispatch('professions/getProfessions')
 								<v-container>
 									<v-row>
 										<v-col cols="12">
-											<v-btn variant="flat" type="submit" :block="true" color="indigo">
+											<v-btn class="w-100" variant="flat" type="submit" :block="true" color="indigo">
 												Add
 											</v-btn>
 										</v-col>

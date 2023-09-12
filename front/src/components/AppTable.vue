@@ -62,19 +62,20 @@ const orderIndexes = computed(() => {
 						{{ pythonCaseToCapitalizedWords(column) }}
 					</slot>
 				</th>
-				<th v-if="$slots.actions"/>
+				<th v-if="$slots.actions" class="text-no-wrap"/>
 			</tr>
 		</thead>
 		<tbody>
 			<tr v-for="row in props.data" :key="row.id">
 				<td v-for="(column, i) in columns" :key="column"
 					:style="{ order: orderIndexes[i] }"
+					class="text-no-wrap"
 				>
 					<slot :name="'cell:' + column" :row="row">
 						{{ row[column] }}
 					</slot>
 				</td>
-				<td v-if="$slots.actions" align="right">
+				<td v-if="$slots.actions" align="right" class="text-no-wrap">
 					<slot name="actions" :row="row"/>
 				</td>
 			</tr>
